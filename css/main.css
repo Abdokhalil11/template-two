@@ -47,6 +47,7 @@ html{
     background-repeat: no-repeat;
     position: relative;
     padding-bottom: 100px;
+    height: 100vh;
     /* height: 100vh; */
 }
 .home .container header{
@@ -172,57 +173,55 @@ html{
         display: block;
     }
 }
-.right_arrow{
-    position: absolute;
-    right: 10px;
-    width: 15px;
-    height: 2px;
-    background-color: white;
+.home::before{
+    content: "\f104";
+    font-weight: 900;
+    font-size: 20px;
+    color: white;
+    font-family:"Font Awesome 6 Free" ;
     top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-}
-.right_arrow::before{
-    content: "";
     position: absolute;
-    right: -7px;
-    width: 15px;
-    height: 2px;
-    top: 8px;
-    background-color: white;
-    /* top: 50%; */
-    transform: rotate(271deg);
+    transform: translateY(-50%);
+    left: 10px;
+    z-index: 2;
 }
+.home::after{
+    content: "\f104";
+    font-weight: 900;
+    font-size: 20px;
+    color: white;
+    font-family:"Font Awesome 6 Free" ;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%) rotate(180deg);
+    right: 10px;
+}
+
 .home .info{
     background-color: var(--seconde-color);
     width: 50%;
     color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     text-align: left;
-    margin-top: 100px;
     padding-left: 100px;
     padding-top: 20px;
     padding-bottom: 20px;
-    position: relative;
     padding-right: 10px;
 }
-.home .info::before{
-    content: "";
-    position: absolute;
-    background-color: white;
-    width: 15px;
-    height: 2px;
-    top: 100px;
-    left: 10px;
-    transform: rotate(325deg);
-}
-.home .info::after{
-    content: "";
-    position: absolute;
-    background-color: white;
-    width: 15px;
-    height: 2px;
-    top: 109px;
-    left: 9px;
-    transform: rotate(40deg);
+@media (max-width:767px){
+    .home .info{
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+    .home::after{
+        display: none;
+    }
+    .home::before{
+        display: none;
+    }
 }
 .info h1{
     font-size: 20px;
@@ -250,15 +249,7 @@ html{
     background-color: var(--frist-color);
 }
 
-@media (max-width:767px){
-    .info h1{
-        font-size: 10px;
-        margin: 5px;
-    }
-    .info p{
-        font-size:5px;
-    }
-}
+
 /* end_home */
 
 /* Start_services */
